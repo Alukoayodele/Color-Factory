@@ -17,6 +17,16 @@
   font-size: xx-large;
   color: white;
 }
+@media screen and (max-width: 812px) {
+  .link-group {
+    margin-left: 120px;
+  }
+}
+@media screen and (width: 768px) {
+  .link-group {
+    margin-left: 230px;
+  }
+}
 @media screen and (min-width: 1025px) {
   .link-group {
     margin-left: 420px;
