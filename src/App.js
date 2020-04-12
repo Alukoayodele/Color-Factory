@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import './App.css';
 import Home from './Home';
 import Color from './components/Color';
@@ -12,11 +17,7 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route
-          exact
-          path='/colors'
-          component={() => <Home colors={colors} />}
-        />
+        <Route path='/colors' component={() => <Home colors={colors} />} />
         <Route
           exact
           path='/colors/:color'
@@ -27,7 +28,10 @@ const App = () => {
           path='/color/new'
           component={() => <AddColor handleColor={setColors} />}
         />
-        {/* <Route component={NotFound} /> */}
+        <Route path='/not-found' component={NotFound} />
+
+        <Redirect from='/' exact to='/colors' />
+        <Redirect to='/not-found' />
       </Switch>
     </Router>
   );
