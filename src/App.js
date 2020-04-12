@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './Home';
 import Color from './components/Color';
@@ -32,9 +27,7 @@ const App = () => {
           path='/color/new'
           component={() => <AddColor handleColor={setColors} />}
         />
-        <Route path='/colors/not-found' component={NotFound} />
-
-        <Redirect to='/colors' />
+        <Route component={NotFound} />
       </Switch>
     </Router>
   );
