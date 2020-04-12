@@ -27,7 +27,7 @@ const App = () => {
           path='/color/new'
           component={() => <AddColor handleColor={setColors} />}
         />
-        <Route component={NotFound} />
+        {/* <Route component={NotFound} /> */}
       </Switch>
     </Router>
   );
